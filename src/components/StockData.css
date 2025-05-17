@@ -1,0 +1,46 @@
+.stock-data-container {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 2.5vw;
+    width: 90%;
+    background-color: darkgreen;
+    text-align: center;
+}
+.stock-data-table {
+    margin-left: auto;
+    margin-right: auto;    
+    border: 1px solid green;
+    padding: 8px;
+    text-align: center;
+    font-size: 3vw;
+
+}
+.stock-data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 10px; /* Spacing between cells */
+    text-align: center;
+}
+
+.stock-data-cell {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+
+}
+
+/* Optional styling for better visual appearance */
+.stock-data-cell p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.stock-data-cell p:first-child {
+    font-weight: bold;
+    text-align: center;
+}

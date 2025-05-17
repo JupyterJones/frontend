@@ -1,0 +1,75 @@
+/* In Header.css or your main CSS file */
+
+.sticky-app-header {
+  /* --- Core Sticky Styles --- */
+  position: sticky; /* Use sticky positioning */
+  top: 0;           /* Stick to the top of the viewport when scrolling */
+  left: 0;          /* Align to the left */
+  /* Ensure it spans the full viewport width */
+  z-index: 1000;    /* Keep the header above other content */
+  /* --- Appearance Styles (Customize these!) --- */
+  background-color: #8B0000; /* Dark red, adjust to your app's theme */
+  color: white;             /* Text color */
+  padding: 10px 15px;       /* Padding inside the header */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for separation */
+  height: 400px;
+  /* --- Layout Styles (Example using Flexbox) --- */
+  display: flex;
+  flex-direction: column; /* Stack title, nav, stocks vertically */
+  align-items: center;    /* Center items horizontally */
+  text-align: center;     /* Center text within blocks */
+border: 2px solid orange;
+}
+
+.sticky-app-header h1 {
+  margin: 0 0 8px 0; /* Space below title */
+  font-size: 1.6em; /* Adjust as needed */
+}
+
+.header-nav {
+  margin-bottom: 8px; /* Space below nav links */
+  display: flex;
+  flex-direction: column; /* Stack nav rows */
+  align-items: center;
+  gap: 5px; /* Space between nav rows */
+}
+
+.header-nav div {
+  display: flex;
+  gap: 10px; /* Space between links in a row */
+  flex-wrap: wrap; /* Allow links to wrap on small screens */
+  justify-content: center;
+}
+
+.header-stock-info p {
+  margin: 8px 0 4px 0; /* Space around the description */
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.header-stock-info div {
+  display: flex;
+  gap: 15px; /* Space between stock tickers */
+  justify-content: center;
+}
+
+/* Style links within the header */
+.sticky-app-header a {
+  color: #f0e68c; /* Khaki color for links - adjust */
+  text-decoration: none;
+  padding: 2px 4px;
+  font-size: 0.95em;
+}
+
+.sticky-app-header a:hover {
+  text-decoration: underline;
+  color: white;
+}
+/* --- IMPORTANT: Prevent Content Overlap --- */
+/* Add padding to the top of the main content area */
+/* The value should be roughly the height of your sticky header */
+.main-page-content {
+  /* Measure your header's height and set padding-top accordingly */
+  /* This value is an ESTIMATE - adjust it! */
+  padding-top: 400px;
+}

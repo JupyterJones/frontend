@@ -1,0 +1,32 @@
+.text-files-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    width:98%;
+    background-color: green;
+}
+
+.file-list-container {
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+select {
+    padding: 8px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.siz{
+    margin-right: auto;
+    margin-left: auto;
+    width:96%;
+}

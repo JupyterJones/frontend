@@ -1,0 +1,21 @@
+    /* components/YouTubeVideo.css */
+
+    .youtube-container {
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      margin-bottom: 15px;
+      border: 1 solid wheat;
+    }
+
+    .youtube-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }

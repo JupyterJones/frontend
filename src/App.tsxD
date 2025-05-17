@@ -1,0 +1,97 @@
+// filename: reactjs-learning-assistant/frontend/src/App.tsx
+import React, { useState, useEffect, useCallback } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import AskForm from './components/AskForm';
+//import HistoryDisplay from './components/HistoryDisplay';
+import FileCreate from './components/FileCreate';
+import FileList from './components/FileList';
+import SecondPage from './components/SecondPage'; // Import SecondPage
+import SqliteData from './components/SqliteData'; // Import SqliteData
+import TextFiles from './components/TextFiles'; // Import TextFiles
+import YouTubeVideo from './components/YouTubeVideo'; // Import YouTubeVideo
+import ChatInterface from './components/ChatInterface'; // Import ChatInterface
+import StockDataComponent from './components/StockDataComponent';
+import SearchInterface from './components/SearchInterface';
+import PostmanVideo from './components/PostmanVideo';
+import GenerateConversation from './components/GenerateConversation'; // <-- Import the new component
+
+function ThirdPage() {
+    return (
+        <div>
+            <h2>This is the ThirdPage</h2>
+            <p>Here you can view your question and answer history.</p>
+            <Link to="/">Go back to the Home Page</Link>
+        </div>
+    );
+}
+
+function App() {
+    const [reloadFilesCounter, setReloadFilesCounter] = useState(0);
+
+    const handleReloadFiles = useCallback(() => {
+        setReloadFilesCounter(prev => prev + 1);
+    }, []);
+
+    return (
+        <Router>
+            <div className="App" style={{ width: '93%', textAlign: 'center', marginTop: '10px', marginRight: 'auto', marginLeft: 'auto', padding: '5px', border: '1px solid #eee', borderRadius: '5px', backgroundColor: 'darkred', color: 'yellow' }}>
+                <h1>ReactJS Learning Assistant</h1>
+                <nav>
+                    <Link to="/" style={{ color: 'lightblue', marginRight: '10px' }}>Home</Link>
+                    <Link to="/history" style={{ color: 'lightblue', marginRight: '10px' }}>History</Link>
+                    <Link to="/FileList" style={{ color: 'lightblue', marginRight: '10px' }}>FileList</Link>
+                    <Link to="/TextFiles" style={{ color: 'lightblue', marginRight: '10px' }}>TextFiles</Link><br />
+                    <Link to="/SearchInterface" style={{ color: 'lightblue', marginRight: '10px' }}>SearchInterface</Link>
+                    <Link to="/ChatInterface" style={{ color: 'lightblue', marginRight: '10px' }}>ChatInterface</Link>
+                    {/* <-- Add navigation link for GenerateConversation --> */}
+                    <Link to="/generate-conversation" style={{ color: 'lightblue', marginRight: '10px' }}>Gen Conversation</Link>
+                    {/* <button onClick={handleReloadFiles} style={{ marginLeft: '10px', padding: '8px 12px' }}>Reload Files</button>*/}
+                    {/* Stock Data Navigation - Changed and simplified */}<br />
+<div  style = {{marginTop: '15px', marginBottom: '5px' }}>
+                    <span style={{ width: '100%', fontSize: '3vw',textAlign: 'center', marginRight: 'auto', marginLeft: 'auto', padding: '5px', border: '1px solid red', borderRadius: '2px', backgroundColor: 'darkred', color: 'yellow' }}>30 Day Indexes: Apple, Microsoft and Google</span><br/>
+     </div>
+                    <Link to="/stock/AAPL" style={{ color: 'lightblue', marginRight: '10px' }}>AAPL</Link>
+                    <Link to="/stock/MSFT" style={{ color: 'lightblue', marginRight: '10px' }}>MSFT</Link>
+                    <Link to="/stock/GOOGL" style={{ color: 'lightblue', marginRight: '10px' }}>GOOGL</Link>
+                </nav>
+                <hr />
+                <Routes>
+                    <Route path="/" element={<>
+                        <AskForm />
+                    </>} />
+                    <Route path="/history" element={<SqliteData />} />
+                    <Route path="/TextFiles" element={<TextFiles />} />
+                    <Route path="/FileList" element={<FileList />} />
+                    <Route path="/ChatInterface" element={<ChatInterface />} />
+                    <Route path="/SearchInterface" element={<SearchInterface/>} />
+                    {/* <-- Add route for GenerateConversation --> */}
+                    <Route path="/generate-conversation" element={<GenerateConversation />} />
+                    {/* Stock Data Routes - Added these */}
+                    <Route path="/stock/:ticker" element={<StockDataComponent />} />
+                </Routes>
+<div style={{
+    width: '93%',
+    maxHeight: '600px',
+    textAlign: 'center',
+    marginTop: '10px',
+    marginRight: 'auto',
+    marginLeft: 'auto',
+    padding: '5px',
+    border: '1px solid #eee',
+    borderRadius: '5px',
+    backgroundColor: 'darkred',
+    color: 'yellow',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center' // to center children horizontally
+}}>
+    <YouTubeVideo />
+    <PostmanVideo />
+</div>
+
+            </div>
+        </Router>
+    );
+}
+
+export default App;
